@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <title>Timo's Portfolio - Mijn projecten</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap');
+        body {
+            margin: 0;
+            font-family: 'Comfortaa', sans-serif;
+            color: white;
+            background-image: linear-gradient(to right, #8a2be2, #4169e1);
+            min-height: 100vh;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        nav a {
+            text-decoration: none;
+            color: white;
+        }
+        nav h2 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        nav ul li a {
+            padding: 15px;
+        }
+        .banner {
+            background-image: url("images/profielfoto.png");
+            height: 500px;
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+        }
+        .section {
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .project-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+        }
+        .project-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        .btn-meer-info {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 15px;
+            background-image: linear-gradient(to right, #6a11cb, #2575fc);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: transform 0.3s ease;
+        }
+        .btn-meer-info:hover {
+            transform: scale(1.05);
+        }
+        .extra-info {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+            padding: 0 10px;
+        }
+        .extra-info.active {
+            max-height: 500px;
+            padding: 10px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.2);
+            color: white;
+            font-size: 0.9rem;
+            margin-top: 50px;
+        }
+
+        /* Nieuwe animatie CSS */
+        .animated-element {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+    
+        .animated-element.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <nav class="animated-element">
+        <h2><a href="HTML portfolio.html">Timo's Portfolio</a></h2>
+        <ul>
+            <li><a href="projecten.html">Mijn projecten</a></li>
+            <li><a href="over-mij.html">Over mij</a></li>
+        </ul>
+    </nav>
+    <div class="banner animated-element"></div>
+    <div class="section animated-element">
+        <h1>Mijn projecten</h1>
+        <div class="portfolio-grid">
+            <div class="project-card animated-element">
+                <img src="images/project nog bezig.png" alt="Beschrijving van project 1">
+                <h3>Langzame knikkerbaan</h3>
+                <p>We moesten een langzame knikkerbaan met allemaal elementen zoals een trechter in een kartonnen doos.</p>
+                <a href="#" class="btn-meer-info">Meer info</a>
+                <div class="extra-info">
+                    <p>Wij hebben deze elementen gebruikt: <br> Een baan <br> Een trechter <br> meer dingen worden later ingevoegd<br> Dit was onze eerste opdracht. <br> Uitvoerdatum: Project nog niet klaar.</p>
+                </div>
+            </div>
+            <div class="project-card animated-element">
+                <img src="images/Geen afbeelding.png" alt="Beschrijving van project 2">
+                <h3></h3>
+                <p></p>
+                <a href="#" class="btn-meer-info">Meer info</a>
+                <div class="extra-info">
+                    <p></p>
+                </div>
+            </div>
+            <div class="project-card animated-element">
+                <img src="images/Geen afbeelding.png" alt="Beschrijving van project 3">
+                <h3></h3>
+                <p></p>
+                <a href="#" class="btn-meer-info">Meer info</a>
+                <div class="extra-info">
+                    <p></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="animated-element">
+        <p>&copy; 2025 Timo's Portfolio | Alle rechten voorbehouden. Gebruik alleen foto's en persoonlijke informatie als ik daar toestemming voor heb gegeven.</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Script voor 'Meer info' knoppen
+            const knoppen = document.querySelectorAll('.btn-meer-info');
+            knoppen.forEach(knop => {
+                knop.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const extraInfo = knop.nextElementSibling;
+                    extraInfo.classList.toggle('active');
+                });
+            });
+
+            // Script voor de laad-animatie
+            const animatedElements = document.querySelectorAll('.animated-element');
+            animatedElements.forEach((element, index) => {
+                setTimeout(() => {
+                    element.classList.add('is-visible');
+                }, 100 * index); // 100ms vertraging voor elk volgend element
+            });
+        });
+    </script>
+</body>
+</html>

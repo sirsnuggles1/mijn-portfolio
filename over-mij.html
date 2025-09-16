@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <title>Timo's Portfolio - Over mij</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap');
+        body {
+            margin: 0;
+            font-family: 'Comfortaa', sans-serif;
+            color: white;
+            background-image: linear-gradient(to right, #8a2be2, #4169e1);
+            min-height: 100vh;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        nav a {
+            text-decoration: none;
+            color: white;
+        }
+        nav h2 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        nav ul li a {
+            padding: 15px;
+        }
+        .banner {
+            background-image: url("images/profielfoto.png");
+            height: 500px;
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+        }
+        .section {
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        /* Nieuwe CSS voor profielfoto */
+        .over-mij-container {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .profielfoto {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .over-mij-container p {
+            flex: 1;
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.2);
+            color: white;
+            font-size: 0.9rem;
+            margin-top: 50px;
+        }
+        
+        /* Nieuwe animatie CSS */
+        .animated-element {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+    
+        .animated-element.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .kat-foto {
+    width: 300px;
+    height: 200px;
+    border-radius: 10px;
+}
+    </style>
+</head>
+<body>
+    <nav class="animated-element">
+        <h2><a href="HTML portfolio.html">Timo's Portfolio</a></h2>
+        <ul>
+            <li><a href="projecten.html">Mijn projecten</a></li>
+            <li><a href="over-mij.html">Over mij</a></li>
+        </ul>
+    </nav>
+    <div class="banner animated-element"></div>
+    <div class="section animated-element">
+        <h1>Over mij</h1>
+        <div class="over-mij-container">
+            <img src="images/profielfoto over-mij.png" alt="Timo's profielfoto" class="profielfoto">
+            <p>Hoi, ik ben Timo. Ik doe HAVO-VWO op het CSG Jan Arentsz in Alkmaar. Op deze website zet ik al mijn opdrachten voor O&O (Onderzoek & Ontwerpen).</p>
+        </div>
+        
+        <br>
+        <h1 class="animated-element">Persoonlijke informatie</h1>
+        <div class="animated-element" style="text-align: left; max-width: 800px; margin: 0 auto;">
+            <h3 class="animated-element">Geboortedatum</h3>
+            <p class="animated-element">21 oktober 2013</p>
+            <h3 class="animated-element">Lievelingskleur</h3>
+            <p class="animated-element">Dat verschild vaak een beetje, soms is het licht blauw soms groen soms paars enz.</p>
+            <h3 class="animated-element">Lievelingseten</h3>
+            <p class="animated-element">Ja, toch wel pannekoeken maar pasta pesto vind ik ook erg lekker.</p>
+            <h3 class="animated-element">Lievelingsdier</h3>
+            <p class="animated-element">Ik hou heel erg van katten! Ik heb zelf ook een kat.</p>
+            <img class="kat-foto" src="images/mijn kat.png" alt="Mijn kat">
+            <h3 class="animated-element">Favoriete film</h3>
+            <p class="animated-element">Ik ben echt een Minecraft fan! Dus mijn favorite film is natuurlijk A Minecraft Movie</p>
+            <h3 class="animated-element">Mijn favoriete muziek</h3>
+            <p class="animated-element">Ik heb heel veel favorite muziek dus ik heb alles in een playlist op Spotify gezet.</p>
+            <iframe class="animated-element" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/0YwGvDeyBmLENl38cm6EM6?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            <h3 class="animated-element">Hobby's</h3>
+            <p class="animated-element">Ik vind waterskiën heel erg leuk en ik hou ook van gamen en programeren (Deze website heb ik zelf gecodeerd).</p>
+            <h3 class="animated-element">Wat wilde je worden toen je klein was?</h3>
+            <p class="animated-element">Ik wou toen graag liftmonteur worden. Dat kwam omdat ik heel erg van knopjes, techniek en vooral liften hielt.</p>
+            <h3 class="animated-element">Als je één dag onzichtbaar zou zijn, wat zou je dan doen?</h3>
+            <p class="animated-element">Heel veel mensen pranken. Dit zou ik echt super vinden!</p>
+            <h3 class="animated-element">Als je een superkracht zou mogen kiezen, welke zou dat dan zijn?</h3>
+            <p class="animated-element">Vliegen zou ik toch wel fijn en leuk vinden. Dan hoef ik niet meer naar school te fietsen.</p>
+        </div>
+    </div>
+    <footer class="animated-element">
+        <p>&copy; 2025 Timo's Portfolio | Alle rechten voorbehouden. Gebruik alleen foto's en persoonlijke informatie als ik daar toestemming voor heb gegeven.</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Script voor de laad-animatie
+            const animatedElements = document.querySelectorAll('.animated-element');
+            animatedElements.forEach((element, index) => {
+                setTimeout(() => {
+                    element.classList.add('is-visible');
+                }, 100 * index); // 100ms vertraging voor elk volgend element
+            });
+        });
+    </script>
+</body>
+</html>
