@@ -169,6 +169,24 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* NIEUWE STIJL VOOR DE DOWNLOAD KNOP */
+        .btn-download {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 15px;
+    /* Oranje-gele gradient */
+            background-image: linear-gradient(to right, #ff8c00, #ffc837); 
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: transform 0.3s ease;
+        }
+        .btn-download:hover {
+            transform: scale(1.05);
+            background-image: linear-gradient(to right, #ff6a00, #ffb300);
+        }
     </style>
     <link rel="icon" type="image/png" href="images/favicon.png">
 </head>
@@ -206,7 +224,9 @@
                 <p>Dit was een project om te leren hoe Tinkercad werkt. Ik heb de Kiwi Kukel gemaakt.</p>
                 <a href="#" class="btn-meer-info">Meer info</a>
                 <div class="extra-info">
-                    <p>Wil je de Kiwi Kukel downloaden? Ga naar deze link: </p>
+                    <p>Wil je de Kiwi Kukel downloaden?</p>
+                    <a href="Bird for O&O.stl" download class="btn-download">Download</a>
+                    <p>Uitvoerdatum: 1 Oktober 2025</p>
                 </div>
             </div>
             <div class="project-card animated-element">
