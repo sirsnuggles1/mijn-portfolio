@@ -66,7 +66,7 @@
 
         /* Stijl voor de foutmelding */
         #error-message {
-            color: #ffcccc; /* Lichtere kleur voor foutmelding op donkere achtergrond */
+            color: #ff0000; /* Lichtere kleur voor foutmelding op donkere achtergrond */
             margin-top: 10px;
             font-weight: bold;
             display: none; /* Standaard verborgen */
@@ -264,10 +264,10 @@
 </head>
 <body>
     <div id="password-form">
-        <h1>🔒 Wachtwoord Beveiliging </h1>
+        <h1>🔒 Wachtwoord Beveiliging 🔒</h1>
         <p>Voer je wachtwoord in om verder te gaan</p>
         <input type="password" id="passwordInput" placeholder="Voer wachtwoord in">
-        <button onclick="checkPassword()">Ontgrendel</button>
+        <button onclick="checkPassword()">Inloggen</button>
         <p id="error-message">Onjuist wachtwoord. Probeer het opnieuw.</p>
     </div>
     <div id="content">
