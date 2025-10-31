@@ -11,31 +11,23 @@
             color: white;
             background-image: linear-gradient(to right, #8a2be2, #4169e1);
             min-height: 100vh;
-        }
         nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 20px;
-            background-color: rgba(255, 255, 255, 0.2);
-        }
-        nav a {
-            text-decoration: none;
-            color: white;
-        }
-        nav h2 {
-            margin: 0;
-            font-size: 1.5rem;
-        }
-        nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-        }
-        nav ul li a {
-            padding: 15px;
-        }
+    /* Positionering: zorgt ervoor dat de nav bovenaan blijft plakken */
+    position: fixed; 
+    top: 0;
+    width: 100%;
+    z-index: 999; /* Zorgt dat de nav boven de rest van de content ligt */
+    
+    /* Stijlherstel */
+    background-image: linear-gradient(to right, #8a2be2, #4169e1); /* De paars-blauwe gradient */
+    background-color: rgba(255, 255, 255, 0.2); /* De lichte, doorschijnende overlay */
+    
+    /* Zorg dat je de oorspronkelijke 'display: flex' en 'padding' behoudt voor de layout */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
         .banner {
             background-image: url("images/profielfoto.png");
             height: 500px;
