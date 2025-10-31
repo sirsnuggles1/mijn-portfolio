@@ -83,12 +83,13 @@
         /* -------------------------------------- */
         /* AANPASSING VOOR VASTE NAVIGATIE */
         /* -------------------------------------- */
-        nav {
+        /* VASTE NAVIGATIE STIJLEN - GECORRIGEERD */
+nav {
     /* Positionering: zorgt ervoor dat de nav bovenaan blijft plakken */
     position: fixed; 
     top: 0;
     width: 100%;
-    z-index: 999; /* Zorgt dat de nav boven de rest van de content ligt */
+    z-index: 999; 
     
     /* Stijlherstel */
     background-image: linear-gradient(to right, #8a2be2, #4169e1); /* De paars-blauwe gradient */
@@ -98,7 +99,19 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 20px;
+    
+    /* *** AANPASSING HIER: Horizontale padding iets verkleind *** */
+    padding: 15px 10px; /* Was 15px 20px, nu 10px horizontaal */
+}
+
+/* Compensatie voor de vaste nav */
+.content-wrapper {
+    padding-top: 60px; /* Zorgt dat de content onder de nav begint */
+}
+
+/* Eventueel aanpassing om de link-lijst strakker te maken */
+nav ul li a {
+    padding: 10px; /* Was 15px, iets verkleind voor meer ruimte */
 }
         
         /* Voeg padding toe aan de body om te voorkomen dat de content onder de vaste nav verdwijnt */
