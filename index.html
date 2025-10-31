@@ -3,6 +3,28 @@
 <head>
     <title>Home - Timo's Portfolio</title>
     <style>
+        /* Verberg de inhoud totdat het juiste wachtwoord is ingevoerd */
+    #content {
+        display: none; 
+        padding: 20px;
+        border: 1px solid #ccc;
+    margin-top: 20px;
+    }
+
+/* Stijl voor het formulier */
+    #password-form {
+        text-align: center;
+        padding: 50px;
+        border: 2px dashed #999;
+    }
+
+/* Stijl voor de foutmelding */
+    #error-message {
+        color: red;
+        margin-top: 10px;
+        font-weight: bold;
+        display: none; /* Standaard verborgen */
+    }
         @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap');
         body {
             margin: 0;
@@ -191,6 +213,14 @@
     <link rel="icon" type="image/png" href="images/favicon.png">
 </head>
 <body>
+    <div id="password-form">
+        <h1>Wachtwoord Vereist 🔑</h1>
+        <p>Voer een van de drie wachtwoorden in om de site te bekijken:</p>
+        <input type="password" id="passwordInput" placeholder="Voer wachtwoord in">
+        <button onclick="checkPassword()">Ontgrendel</button>
+        <p id="error-message">Onjuist wachtwoord. Probeer het opnieuw.</p>
+    </div>
+    <div id="content">
     <nav class="animated-element">
         <h2><a href="index.html">Timo's Portfolio</a></h2>
         <ul>
@@ -251,11 +281,36 @@
             <a href="over-mij.html" class="btn-over-mij animated-element">Meer over mij</a>
         </div>
     </div>
+</div>
     <footer class="animated-element">
         <p>&copy; 2025 Timo's Portfolio | Alle rechten voorbehouden. Gebruik alleen foto's en persoonlijke informatie als ik daar toestemming voor heb gegeven.</p>
     </footer>
 
     <script>
+        function checkPassword() {
+        // **PAS DEZE DRIE WACHTWOORDEN AAN NAAR WENS**
+        const validPasswords = ["GBO_O&O[21*%]", "STI_O&O[73#^]", "TVR_HOST[83*#]"];
+        
+        const enteredPassword = document.getElementById("passwordInput").value;
+        
+        const contentDiv = document.getElementById("content");
+        const formDiv = document.getElementById("password-form");
+        const errorMsg = document.getElementById("error-message");
+
+        // Controleer of de ingevoerde waarde overeenkomt met een van de geldige wachtwoorden
+        if (validPasswords.includes(enteredPassword)) {
+            // Toegang verleend
+            formDiv.style.display = "none"; // Verberg het formulier
+            contentDiv.style.display = "block"; // Toon de content
+            errorMsg.style.display = "none";
+            document.getElementById("passwordInput").value = ""; 
+        } else {
+            // Toegang geweigerd
+            errorMsg.style.display = "block"; // Toon de foutmelding
+            document.getElementById("passwordInput").value = ""; // Wis het invoerveld
+            document.getElementById("passwordInput").focus(); // Zet de cursor terug in het veld
+        }
+    }
         document.addEventListener('DOMContentLoaded', function() {
             // Script voor 'Meer info' knoppen
             const knoppen = document.querySelectorAll('.btn-meer-info');
