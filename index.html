@@ -3,29 +3,79 @@
 <head>
     <title>Home - Timo's Portfolio</title>
     <style>
-        /* Verberg de inhoud totdat het juiste wachtwoord is ingevoerd */
-    #content {
-        display: none; 
-        padding: 20px;
-        border: 1px solid #ccc;
-    margin-top: 20px;
-    }
-
-/* Stijl voor het formulier */
-    #password-form {
-        text-align: center;
-        padding: 50px;
-        border: 2px dashed #999;
-    }
-
-/* Stijl voor de foutmelding */
-    #error-message {
-        color: red;
-        margin-top: 10px;
-        font-weight: bold;
-        display: none; /* Standaard verborgen */
-    }
         @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap');
+        
+        /* -------------------------------------- */
+        /* NIEUWE STIJL VOOR HET WACHTWOORD FORMULIER */
+        /* -------------------------------------- */
+        #password-form {
+            display: flex; /* Gebruik flexbox om de inhoud te centreren */
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: fixed; /* Blijft op zijn plek */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(to right, #8a2be2, #4169e1); /* Jouw gradient */
+            text-align: center;
+            z-index: 1000; /* Zorgt ervoor dat het boven alle andere content ligt */
+            color: white;
+            padding: 20px;
+        }
+
+        #password-form h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        #password-form input[type="password"] {
+            padding: 10px;
+            margin: 15px 0;
+            border: none;
+            border-radius: 5px;
+            width: 80%;
+            max-width: 300px;
+            font-size: 1rem;
+        }
+
+        #password-form button {
+            /* Jouw stijl voor de knoppen overgenomen */
+            display: inline-block;
+            padding: 10px 20px;
+            background-image: linear-gradient(to right, #6a11cb, #2575fc);
+            color: white;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        #password-form button:hover {
+            transform: scale(1.05);
+        }
+
+        /* Verberg de inhoud totdat het juiste wachtwoord is ingevoerd */
+        #content {
+            display: none; 
+            /* Let op: padding, border en margin-top worden hier verwijderd omdat ze niet meer nodig zijn */
+        }
+
+        /* Stijl voor de foutmelding */
+        #error-message {
+            color: #ffcccc; /* Lichtere kleur voor foutmelding op donkere achtergrond */
+            margin-top: 10px;
+            font-weight: bold;
+            display: none; /* Standaard verborgen */
+        }
+        /* -------------------------------------- */
+        /* EINDE WACHTWOORD STIJL */
+        /* -------------------------------------- */
+
+
         body {
             margin: 0;
             font-family: 'Comfortaa', sans-serif;
@@ -186,7 +236,7 @@
             transform: translateY(20px);
             transition: opacity 1s ease-out, transform 1s ease-out;
         }
-    
+        
         .animated-element.is-visible {
             opacity: 1;
             transform: translateY(0);
@@ -197,7 +247,7 @@
             display: inline-block;
             padding: 10px 20px;
             margin-top: 15px;
-    /* Rood paarse gradient */
+        /* Rood paarse gradient */
             background-image: linear-gradient(to right, #ff0000, #ad00ff); 
             color: white;
             text-decoration: none;
@@ -221,67 +271,68 @@
         <p id="error-message">Onjuist wachtwoord. Probeer het opnieuw.</p>
     </div>
     <div id="content">
-    <nav class="animated-element">
-        <h2><a href="index.html">Timo's Portfolio</a></h2>
-        <ul>
-            <li><a href="projecten.html">Mijn projecten</a></li>
-            <li><a href="over-mij.html">Over mij</a></li>
-        </ul>
-    </nav>
-    
-    <div class="banner animated-element"></div>
-    
-    <div class="section animated-element">
-        <h1>Welkom op mijn website!</h1>
-        <p>Op deze website zet ik alle projecten die ik heb gedaan bij O&O (Onderzoek & Ontwerpen).</p>
-        <br>
-        <br>
-        <br>
-        <h1 class="animated-element">Mijn recente projecten.</h1>
-        <div class="portfolio-grid">
-            <div class="project-card animated-element">
-                <img src="images/project nog bezig.png" alt="Afbeelding kan niet worden geladen">
-                <h3>Langzame knikkerbaan</h3>
-                <p>We moesten een langzame knikkerbaan met allemaal elementen zoals een trechter in een kartonnen doos.</p>
-                <a href="#" class="btn-meer-info">Meer info</a>
-                <div class="extra-info">
-                    <p>Wij hebben deze elementen gebruikt: <br> Een half-pipe<br> Een trechter <br> Twee zigzagbanen<br> En nog een half-pipe op het eind<br> Dit was onze eerste opdracht. <br> Uitvoerdatum: 29 september 2025</p>
+        <nav class="animated-element">
+            <h2><a href="index.html">Timo's Portfolio</a></h2>
+            <ul>
+                <li><a href="projecten.html">Mijn projecten</a></li>
+                <li><a href="over-mij.html">Over mij</a></li>
+            </ul>
+        </nav>
+        
+        <div class="banner animated-element"></div>
+        
+        <div class="section animated-element">
+            <h1>Welkom op mijn website!</h1>
+            <p>Op deze website zet ik alle projecten die ik heb gedaan bij O&O (Onderzoek & Ontwerpen).</p>
+            <br>
+            <br>
+            <br>
+            <h1 class="animated-element">Mijn recente projecten.</h1>
+            <div class="portfolio-grid">
+                <div class="project-card animated-element">
+                    <img src="images/project nog bezig.png" alt="Afbeelding kan niet worden geladen">
+                    <h3>Langzame knikkerbaan</h3>
+                    <p>We moesten een langzame knikkerbaan met allemaal elementen zoals een trechter in een kartonnen doos.</p>
+                    <a href="#" class="btn-meer-info">Meer info</a>
+                    <div class="extra-info">
+                        <p>Wij hebben deze elementen gebruikt: <br> Een half-pipe<br> Een trechter <br> Twee zigzagbanen<br> En nog een half-pipe op het eind<br> Dit was onze eerste opdracht. <br> Uitvoerdatum: 29 september 2025</p>
+                    </div>
                 </div>
-            </div>
-            <div class="project-card animated-element">
-                <img src="images/kiwi-kukel.png" alt="De echte Kiwi Kukel">
-                <h3>Kiwi Kukel</h3>
-                <p>Dit was een project om te leren hoe Tinkercad werkt. Ik heb de Kiwi Kukel gemaakt.</p>
-                <a href="#" class="btn-meer-info">Meer info</a>
-                <div class="extra-info">
-                    <p>Wil je de Kiwi Kukel downloaden?</p>
-                    <a href="downloads/Bird for O&O.stl" download class="btn-download">Download</a>
-                    <p>Uitvoerdatum: 1 Oktober 2025</p>
+                <div class="project-card animated-element">
+                    <img src="images/kiwi-kukel.png" alt="De echte Kiwi Kukel">
+                    <h3>Kiwi Kukel</h3>
+                    <p>Dit was een project om te leren hoe Tinkercad werkt. Ik heb de Kiwi Kukel gemaakt.</p>
+                    <a href="#" class="btn-meer-info">Meer info</a>
+                    <div class="extra-info">
+                        <p>Wil je de Kiwi Kukel downloaden?</p>
+                        <a href="downloads/Bird for O&O.stl" download class="btn-download">Download</a>
+                        <p>Uitvoerdatum: 1 Oktober 2025</p>
+                    </div>
                 </div>
-            </div>
-            <div class="project-card animated-element">
-                <img src="images/project nog bezig.png" alt="Beschrijving van project 3">
-                <h3>Vakkanjer 2025-2026</h3>
-                <p>Wij hebben onze eerste opdracht! 🥳 Dat is een competitie </p>
-                <a href="#" class="btn-meer-info">Meer info</a>
-                <div class="extra-info">
-                    <p></p>
+                <div class="project-card animated-element">
+                    <img src="images/project nog bezig.png" alt="Beschrijving van project 3">
+                    <h3>Vakkanjer 2025-2026</h3>
+                    <p>Wij hebben onze eerste opdracht! 🥳 Dat is een competitie </p>
+                    <a href="#" class="btn-meer-info">Meer info</a>
+                    <div class="extra-info">
+                        <p></p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="section animated-element">
-        <h1 class="animated-element">Over mij</h1>
-        <div class="over-mij-container">
-            <img src="images/profielfoto over-mij.png" alt="Mijn profielfoto" class="profielfoto">
-            <p>Hoi, ik ben Timo. Ik doe HAVO-VWO op het CSG Jan Arentsz in Alkmaar. Op deze website zet ik al mijn opdrachten voor O&O (Onderzoek & Ontwerpen).</p>
-        </div>
-        <div style="text-align: center; margin-top: 20px;">
-            <a href="over-mij.html" class="btn-over-mij animated-element">Meer over mij</a>
+        <div class="section animated-element">
+            <h1 class="animated-element">Over mij</h1>
+            <div class="over-mij-container">
+                <img src="images/profielfoto over-mij.png" alt="Mijn profielfoto" class="profielfoto">
+                <p>Hoi, ik ben Timo. Ik doe HAVO-VWO op het CSG Jan Arentsz in Alkmaar. Op deze website zet ik al mijn opdrachten voor O&O (Onderzoek & Ontwerpen).</p>
+            </div>
+            <div style="text-align: center; margin-top: 20px;">
+                <a href="over-mij.html" class="btn-over-mij animated-element">Meer over mij</a>
+            </div>
         </div>
     </div>
-</div>
+    
     <footer class="animated-element">
         <p>&copy; 2025 Timo's Portfolio | Alle rechten voorbehouden. Gebruik alleen foto's en persoonlijke informatie als ik daar toestemming voor heb gegeven.</p>
     </footer>
@@ -303,7 +354,8 @@
             formDiv.style.display = "none"; // Verberg het formulier
             contentDiv.style.display = "block"; // Toon de content
             errorMsg.style.display = "none";
-            document.getElementById("passwordInput").value = ""; 
+            // De animatie scripts worden hieronder opnieuw gestart voor de nu zichtbare content
+            animateElements(); 
         } else {
             // Toegang geweigerd
             errorMsg.style.display = "block"; // Toon de foutmelding
@@ -311,25 +363,34 @@
             document.getElementById("passwordInput").focus(); // Zet de cursor terug in het veld
         }
     }
-        document.addEventListener('DOMContentLoaded', function() {
-            // Script voor 'Meer info' knoppen
-            const knoppen = document.querySelectorAll('.btn-meer-info');
-            knoppen.forEach(knop => {
-                knop.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const extraInfo = knop.nextElementSibling;
-                    extraInfo.classList.toggle('active');
-                });
-            });
 
-            // Script voor de laad-animatie
-            const animatedElements = document.querySelectorAll('.animated-element');
-            animatedElements.forEach((element, index) => {
+    // Functie voor de animatie, zodat deze opnieuw aangeroepen kan worden na het inloggen
+    function animateElements() {
+        const animatedElements = document.querySelectorAll('#content .animated-element');
+        animatedElements.forEach((element, index) => {
+            // Voorkom dat de animatie wordt gestart als de pagina nog vergrendeld is
+            if (document.getElementById('content').style.display === 'block') {
                 setTimeout(() => {
                     element.classList.add('is-visible');
                 }, 100 * index); // 100ms vertraging voor elk volgend element
+            }
+        });
+    }
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        // Script voor 'Meer info' knoppen
+        const knoppen = document.querySelectorAll('.btn-meer-info');
+        knoppen.forEach(knop => {
+            knop.addEventListener('click', function(e) {
+                e.preventDefault();
+                const extraInfo = knop.nextElementSibling;
+                extraInfo.classList.toggle('active');
             });
         });
+        
+        // De animatie wordt NIET automatisch gestart bij het laden van de DOM, 
+        // maar alleen na succesvolle inlog (aangeroepen in checkPassword).
+    });
     </script>
 </body>
 </html>
