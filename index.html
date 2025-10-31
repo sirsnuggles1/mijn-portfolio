@@ -61,7 +61,7 @@
         /* Verberg de inhoud totdat het juiste wachtwoord is ingevoerd */
         #content {
             display: none; 
-            /* Let op: padding, border en margin-top worden hier verwijderd omdat ze niet meer nodig zijn */
+            /* De hoofdcontent wordt nu getoond nadat de fix is toegepast */
         }
 
         /* Stijl voor de foutmelding */
@@ -331,12 +331,11 @@
                 <a href="over-mij.html" class="btn-over-mij animated-element">Meer over mij</a>
             </div>
         </div>
-    </div>
-    
-    <footer class="animated-element">
-        <p>&copy; 2025 Timo's Portfolio | Alle rechten voorbehouden. Gebruik alleen foto's en persoonlijke informatie als ik daar toestemming voor heb gegeven.</p>
-    </footer>
-
+        
+        <footer class="animated-element">
+            <p>&copy; 2025 Timo's Portfolio | Alle rechten voorbehouden. Gebruik alleen foto's en persoonlijke informatie als ik daar toestemming voor heb gegeven.</p>
+        </footer>
+        </div>
     <script>
         function checkPassword() {
         // **PAS DEZE DRIE WACHTWOORDEN AAN NAAR WENS**
@@ -354,7 +353,7 @@
             formDiv.style.display = "none"; // Verberg het formulier
             contentDiv.style.display = "block"; // Toon de content
             errorMsg.style.display = "none";
-            // De animatie scripts worden hieronder opnieuw gestart voor de nu zichtbare content
+            // Start de animaties opnieuw
             animateElements(); 
         } else {
             // Toegang geweigerd
@@ -366,6 +365,7 @@
 
     // Functie voor de animatie, zodat deze opnieuw aangeroepen kan worden na het inloggen
     function animateElements() {
+        // Selecteer ALLE animated-elementen BINNEN de #content div
         const animatedElements = document.querySelectorAll('#content .animated-element');
         animatedElements.forEach((element, index) => {
             // Voorkom dat de animatie wordt gestart als de pagina nog vergrendeld is
