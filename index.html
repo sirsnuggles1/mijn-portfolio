@@ -84,19 +84,22 @@
         /* AANPASSING VOOR VASTE NAVIGATIE */
         /* -------------------------------------- */
         nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 20px;
-            background-color: rgba(255, 255, 255, 0.95); /* Maak de nav nu semi-opaak zodat de content eronder niet doorheen schijnt */
-            
-            /* **DEZE LIJNEN ZORGEN VOOR DE VASTE POSITIE** */
-            position: fixed; 
-            top: 0;
-            width: 100%;
-            z-index: 999; /* Zorg dat de nav boven de rest ligt, maar onder het password-form */
-            /* -------------------------------------- */
-        }
+    /* Positionering: zorgt ervoor dat de nav bovenaan blijft plakken */
+    position: fixed; 
+    top: 0;
+    width: 100%;
+    z-index: 999; /* Zorgt dat de nav boven de rest van de content ligt */
+    
+    /* Stijlherstel */
+    background-image: linear-gradient(to right, #8a2be2, #4169e1); /* De paars-blauwe gradient */
+    background-color: rgba(255, 255, 255, 0.2); /* De lichte, doorschijnende overlay */
+    
+    /* Zorg dat je de oorspronkelijke 'display: flex' en 'padding' behoudt voor de layout */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
         
         /* Voeg padding toe aan de body om te voorkomen dat de content onder de vaste nav verdwijnt */
         .content-wrapper {
